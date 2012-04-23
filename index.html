@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <title></title>
+
+  </head>
+  <body>
+    <canvas id='map' width='1600' height='1600'>
+
+    <script>
+      var canvas = document.getElementById('map');
+      var ctx = canvas.getContext('2d');
+
+      var list = [
+        [-644,602,'とらきち'],
+        [-600,686,'ほりたん'],
+        [-162,140,'月宮'],
+        [-502,638,'mashiro'],
+        [-587,584,'まかま'],
+        [90,-192,'ukstudio'],
+        [-586,686,'とてながし'],
+        [-538,637,'で'],
+        [-662,704,'ゴワス'],
+        [-680,520,'結']
+      ]
+
+      for(var i=0;i<list.length;i++){
+        ctx.strokeRect(list[i][0]+800,800-list[i][1],5,5);
+        ctx.strokeText(list[i][2]+'('+list[i][0]+','+list[i][1]+')',list[i][0]+800,800-list[i][1]);
+
+        ctx.strokeRect(0,800,3200,1);
+        ctx.strokeRect(800,800,1,1);
+        ctx.strokeText('(0,0)',800,810)
+
+        ctx.strokeRect(800,0,1,3200);
+      }
+    </script>
+
+  </body>
+</html>
+
+

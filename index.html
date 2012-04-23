@@ -27,6 +27,10 @@
         [-680,520,'結','#000']
       ]
 
+      var debris = [
+        [0,0,'デブリス'],
+      ]
+
       var ratio = 1;
       var max = {x: 1600 * ratio, y: 1600 * ratio}
       var center = {x: 800 * ratio, y: 800 * ratio};
@@ -45,6 +49,13 @@
         ctx.strokeRect(x(members[i][0]),y(members[i][1]),5,5);
         ctx.fillRect(x(members[i][0]),y(members[i][1]),5,5);
         ctx.strokeText(members[i][2]+'('+members[i][0]+','+members[i][1]+')',x(members[i][0]+10),y(members[i][1]));
+      }
+
+      for(var i=0;i<debris.length;i++){
+	ctx.strokeStyle = debris[i][3];
+        ctx.strokeRect(x(debris[i][0]),y(debris[i][1]),5,5);
+        ctx.fillRect(x(debris[i][0]),y(debris[i][1]),5,5);
+        ctx.strokeText(debris[i][2]+'('+debris[i][0]+','+debris[i][1]+')',x(debris[i][0]+10),y(debris[i][1]));
       }
     </script>
 

@@ -4,10 +4,107 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
-    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <title>だけど俺達はロックスターだ！</title>
+    <style type="text/css">
+    html, * {
+      margin:0;
+      padding:0;
+    }
+    #map {
+      width:1600px;
+      height:1600px;
+      border:1px solid #000;
+    }
+    #map_html {
+      width: 799px;
+      height: 799px;
+      top:800px;
+      left:800px;
+      border-top: 1px solid #000;
+      border-left: 1px solid #000;
+      position:relative;
+    }
+    #map_html a {
+      text-indent: -9999px;
+      display: block;
+      height:5px;
+      width:5px;
+      background-color: red;
+      overflow:hidden;
+      position:absolute;
+      z-index: 9999;
+    }
+    #map_line {
+      width: 799px;
+      height: 799px;
+      top: -800px;
+      left: -800px;
+      border-bottom: 1px solid #000;
+      border-right: 1px solid #000;
+      position:absolute;
+    }
+    .hover {
+      position:absolute;
+      border: 1px solid blue;
+      font-size: 12px;
+      background-color:#ccffff;
+      opacity:0.8;
+    }
+    </style>
 
   </head>
   <body>
+
+    <label for="toggle"><input type="checkbox" name="toggle" id="toggle"/>切り替え</label>
+    <div id="map">
+      <div id="map_html">
+        <a href="#" data-point="-644,602">とらきち</a>
+        <a href="#" data-point="-600,686">ほりたん</a>
+        <a href="#" data-point="-162,140">月宮</a>
+        <a href="#" data-point="-502,638">mashiro</a>
+        <a href="#" data-point="-587,584">まかま</a>
+        <a href="#" data-point="90,-192">ukstudio</a>
+        <a href="#" data-point="-586,686">とてながし</a>
+        <a href="#" data-point="-538,637">で</a>
+        <a href="#" data-point="-662,704">ゴワス</a>
+        <a href="#" data-point="-680,520">結</a>
+        <div id="map_line">　</div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $("a", "#map_html").each(function(){
+        var point = $(this).attr('data-point').split(',');
+        point[1] = (point[1] < 0) ? parseInt(point[1]) * -1 : point[1] * -1;
+        $(this).css("top",point[0]+"px").css("left",point[1]+"px");
+        $(this).hover(
+          function(e){
+            $("#map_html").append(
+              $('<div />')
+                .addClass('hover')
+                .text($(this).text() + "(" + $(this).attr('data-point') + ")")
+                .css('top',  $(this).position()['top']-20)
+                .css('left', $(this).position()['left']+10)
+              );
+          },
+          function(e){
+            $("#map_html div.hover").remove();
+          }
+        )
+      });
+      $("#toggle").click(function(e){
+        var checked = $(this).attr('checked');
+        $("a", "#map_html").each(function(){
+          if(checked == 'checked') {
+            $(this).trigger('mouseover');
+          } else {
+            $(this).trigger('mouseout');
+          }
+        })
+      });
+    </script>
+
+    <!--
     <canvas id='map' width='1600' height='1600'>
 
     <script>
@@ -38,6 +135,7 @@
         ctx.strokeRect(800,0,1,3200);
       }
     </script>
+    -->
 
   </body>
 </html>

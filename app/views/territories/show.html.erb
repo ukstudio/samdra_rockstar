@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @territory.user.name %>
+</p>
+
+<p>
+  <b>X:</b>
+  <%= @territory.x %>
+</p>
+
+<p>
+  <b>Y:</b>
+  <%= @territory.y %>
+</p>
+
+
+<%= link_to 'Edit', edit_territory_path(@territory) %> |
+<%= link_to 'Back', territories_path %>

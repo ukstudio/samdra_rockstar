@@ -1,18 +1,11 @@
+= link_to 'メンバー追加', users_path
 %label{:for => "toggle"}
   %input#toggle{:name => "toggle", :type => "checkbox"}>/
   切り替え
 #map
   #map_html
-    %a{"data-point" => "-644,602", :href => "#"} とらきち
-    %a{"data-point" => "-600,686", :href => "#"} ほりたん
-    %a{"data-point" => "-162,140", :href => "#"} 月宮
-    %a{"data-point" => "-502,638", :href => "#"} mashiro
-    %a{"data-point" => "-587,584", :href => "#"} まかま
-    %a{"data-point" => "90,-192", :href => "#"} ukstudio
-    %a{"data-point" => "-586,686", :href => "#"} とてながし
-    %a{"data-point" => "-538,637", :href => "#"} で
-    %a{"data-point" => "-662,704", :href => "#"} ゴワス
-    %a{"data-point" => "-680,520", :href => "#"} 結
+    - @territories.each do |t|
+      %a{"data-point" => "#{t.x},#{t.y}", :href => "#"}= t.user.name
     #map_line 　
 
 :javascript

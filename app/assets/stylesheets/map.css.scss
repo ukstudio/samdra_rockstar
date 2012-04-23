@@ -1,0 +1,44 @@
+html, * {
+  margin:0;
+  padding:0;
+}
+#map {
+  width:1600px;
+  height:1600px;
+  border:1px solid #000;
+}
+#map_html {
+  width: 799px;
+  height: 799px;
+  top:800px;
+  left:800px;
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  position:relative;
+}
+#map_html a {
+  text-indent: -9999px;
+  display: block;
+  height:5px;
+  width:5px;
+  background-color: red;
+  overflow:hidden;
+  position:absolute;
+  z-index: 9999;
+}
+#map_line {
+  width: 799px;
+  height: 799px;
+  top: -800px;
+  left: -800px;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  position:absolute;
+}
+.hover {
+  position:absolute;
+  border: 1px solid blue;
+  font-size: 12px;
+  background-color:#ccffff;
+  opacity:0.8;
+}

@@ -1,0 +1,40 @@
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-04-23 17:36:48 +0900
+Served asset /rails.png - 200 OK (7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-23 17:36:57 +0900
+Processing by MapController#index as HTML
+  Rendered map/index.html.haml within layouts/application (10.7ms)
+Compiled map.css  (55ms)  (pid 15164)
+Compiled application.css  (66ms)  (pid 15164)
+Compiled jquery.js  (3ms)  (pid 15164)
+Compiled jquery_ujs.js  (0ms)  (pid 15164)
+Compiled map.js  (204ms)  (pid 15164)
+Compiled application.js  (281ms)  (pid 15164)
+Completed 200 OK in 452ms (Views: 451.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-23 17:36:58 +0900
+Served asset /application.css - 200 OK (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-23 17:36:58 +0900
+Served asset /jquery_ujs.js - 200 OK (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-23 17:36:58 +0900
+Served asset /jquery.js - 200 OK (5ms)
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2012-04-23 17:36:58 +0900
+Served asset /map.css - 200 OK (2ms)
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2012-04-23 17:36:58 +0900
+Served asset /map.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-23 17:36:58 +0900
+Served asset /application.js - 200 OK (15ms)

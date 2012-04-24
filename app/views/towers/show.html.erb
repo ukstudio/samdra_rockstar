@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tower:</b>
+  <%= @tower.tower_name %>
+</p>
+
+<p>
+  <b>X:</b>
+  <%= @tower.x %>
+</p>
+
+<p>
+  <b>Y:</b>
+  <%= @tower.y %>
+</p>
+
+
+<%= link_to 'Edit', edit_tower_path(@tower) %> |
+<%= link_to 'Back', towers_path %>

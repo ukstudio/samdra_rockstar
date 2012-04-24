@@ -1,0 +1,27 @@
+<h1>Listing towers</h1>
+
+<table>
+  <tr>
+    <th>Tower</th>
+    <th>X</th>
+    <th>Y</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @towers.each do |tower| %>
+  <tr>
+    <td><%= tower.tower_name %></td>
+    <td><%= tower.x %></td>
+    <td><%= tower.y %></td>
+    <td><%= link_to 'Show', tower %></td>
+    <td><%= link_to 'Edit', edit_tower_path(tower) %></td>
+    <td><%= link_to 'Destroy', tower, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tower', new_tower_path %>
